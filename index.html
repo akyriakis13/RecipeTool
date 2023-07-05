@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sous</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="index-nav.js"></script>
+    <script>
+        const token = '${token}';
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+<div class="window container">
+
+    <div class="tab-bar">
+        <button class="tab-button active" onclick="openTab('search')">Search</button>
+        <button class="tab-button" onclick="openTab('custom')">Custom Recipes</button>
+        <button class="tab-button" onclick="openTab('saved')">Your Cookbook</button>
+    </div>
+
+    <div id="search" class="tab-content">
+        <!-- Search content here -->
+        <div class="main">
+            <form id="search-form">
+                <label for="ingredient">Ingredient:</label>
+                <input type="text" id="ingredient" name="ingredient"><br>
+
+                <label for="cuisine-type">Cuisine Type:</label>
+                <input type="text" id="cuisine-type" name="cuisine-type"><br>
+
+                <label for="gluten-free">Gluten-Free:</label>
+                <input type="checkbox" id="gluten-free" name="gluten-free"><br>
+
+                <label for="vegan">Vegan:</label>
+                <input type="checkbox" id="vegan" name="vegan"><br>
+
+                <label for="vegetarian">Vegetarian:</label>
+                <input type="checkbox" id="vegetarian" name="vegetarian"><br>
+
+                <button type="submit">Search</button>
+            </form>
+            <script src="script.js"></script>
+        </div>
+        <!-- Results content -->
+        <div id="recipe-list" class="recipe-list"></div>
+        <!-- End list -->
+    </div>
+
+    <div id="custom" class="tab-content" style="display:none;">
+        <!-- custom recipes content -->
+        <div class="main">
+            <form id="custom-recipe-form">
+                <label for="name">Recipe Name:</label>
+                <input type="text" id="name" name="recipe-name"><br>
+
+                <label for="ingredients">Ingredients:</label>
+                <input type="text" id="ingredients" name="ingredients"><br>
+
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description"><br>
+
+                <label for="url">Link to recipe:</label>
+                <input type="url" id="url" name="url"><br>
+
+                <button class="save-recipe-button" type="submit">Save Recipe</button>
+            </form>
+            <script src="save-script.js"></script>
+        </div>
+    </div>
+
+    <div id="saved" class="tab-content" style="display:none;">
+        <!-- saved recipe content -->
+        <div class="recipe-list main" id="main">
+            <h2>My Cookbook</h2>
+            <button id="view-recipes-btn">View Your Recipes</button>
+
+            <script src="cookbook.js"></script>
+        </div>
+        <div id="list-wrap" class="list-wrap" style="display:none;">
+            <button id="exit-button" class="exit-button">Exit</button>
+            <ul id="recipes-list"></ul>
+        </div>
+    </div>
+
+    <div id="assistant" class="tab-content" style="display:none;">
+        <!-- Sous chef content -->
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
+
