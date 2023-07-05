@@ -6,7 +6,7 @@ import restApi from './new_endpoint.js'
 let app = Express();
 app.use(bodyParser.json());
 app.use("/", restApi);
-app.use(Express.static("./public"));
+app.use(Express.static("./"));
 
 import session from 'express-session';
 
